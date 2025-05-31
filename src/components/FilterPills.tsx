@@ -48,7 +48,7 @@ export default function FilterPills({
                 className={`
                   px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border min-w-[100px]
                   ${selectedGrades.includes(grade)
-                    ? 'bg-[#5736FB] text-white border-[#5736FB]'
+                    ? 'bg-[#0092ff] text-white border-[#0092ff]'
                     : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
                   }
                 `}

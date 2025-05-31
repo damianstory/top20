@@ -5,18 +5,52 @@ interface VideoCardProps {
 }
 
 export default function VideoCard({ video }: VideoCardProps) {
+  // Extract iframe src from Loom embed HTML
+  const getLoomIframeSrc = (loomEmbedHtml: string) => {
+    const srcMatch = loomEmbedHtml.match(/src="([^"]+)"/);
+    return srcMatch ? srcMatch[1] : '';
+  };
+
+  // Extract iframe src from Google Drive embed HTML
+  const getGoogleDriveIframeSrc = (googleDriveEmbedHtml: string) => {
+    const srcMatch = googleDriveEmbedHtml.match(/src="([^"]+)"/);
+    return srcMatch ? srcMatch[1] : '';
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      {/* YouTube Video Embed */}
+      {/* Video Embed - handles YouTube, Loom, and Google Drive */}
       <div className="aspect-video">
-        <iframe
-          src={video.youtubeUrl}
-          title={video.title}
-          className="w-full h-full"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+        {video.videoType === 'loom' && video.loomEmbedHtml ? (
+          // Loom embed as simple iframe - let aspect-video handle sizing
+          <iframe
+            src={getLoomIframeSrc(video.loomEmbedHtml)}
+            title={video.title}
+            className="w-full h-full"
+            frameBorder="0"
+            allowFullScreen
+          />
+        ) : video.videoType === 'googledrive' && video.googleDriveEmbedHtml ? (
+          // Google Drive embed as simple iframe - let aspect-video handle sizing
+          <iframe
+            src={getGoogleDriveIframeSrc(video.googleDriveEmbedHtml)}
+            title={video.title}
+            className="w-full h-full"
+            frameBorder="0"
+            allow="autoplay"
+            allowFullScreen
+          />
+        ) : (
+          // YouTube embed (fallback for any video without specific embed HTML)
+          <iframe
+            src={video.videoUrl}
+            title={video.title}
+            className="w-full h-full"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        )}
       </div>
       
       {/* Video Information */}
