@@ -1,0 +1,208 @@
+# PRD: DMZ x myBlueprint Microgrant Showcase Landing Page
+
+## Project Overview
+A simple, responsive landing page to showcase 20 student-created videos that received $500 microgrants from the DMZ and myBlueprint collaboration. The page will feature filtering capabilities and embedded YouTube videos in a clean grid layout.
+
+## Technical Stack
+- **Framework:** Next.js
+- **UI Components:** shadcn/ui
+- **Hosting:** Vercel
+- **Video Embedding:** YouTube embed functionality
+- **Development Environment:** Cursor IDE
+
+## Page Structure & Content
+
+### Header Section
+- **H1 Title:** "DMZ x myBlueprint Microgrant Winners"
+- **Subtitle/Description:** "Celebrating 20 innovative student projects that received $500 microgrants to bring their ideas to life"
+
+### Filter Section
+Two pill-style filter groups positioned horizontally:
+
+**School Board Filter:**
+- All Boards (default/show all)
+- Toronto DSB
+- Toronto Catholic DSB
+- Peel DSB
+- York Region DSB
+- Halton DSB
+- Dufferin Peel CDSB
+- York Catholic DSB
+
+**Grade Filter:**
+- All Grades (default/show all)
+- Grade 9
+- Grade 10
+- Grade 11
+- Grade 12
+
+### Video Grid Section
+- **Layout:** 4 columns × 5 rows = 20 video containers
+- **Video Format:** Square aspect ratio YouTube embeds
+- **Click-to-play:** Videos require user interaction to start
+
+### Video Container Components
+Each container includes:
+1. **YouTube Embed:** Square embedded video (placeholder URLs for now)
+2. **Metadata Pills:** 
+   - School board pill
+   - Grade pill
+3. **Description:** One-sentence project description (placeholder text for now)
+
+### Footer Section
+- Logo placement area for DMZ and myBlueprint logos with links
+
+## Functional Requirements
+
+### Filter Behavior
+- **Independent Filtering:** Users can select school board OR grade filters independently
+- **Combined Filtering:** Users can select both school board AND grade filters simultaneously
+- **Dynamic Display:** Only videos matching selected filter criteria are visible; non-matching videos are hidden
+- **Default State:** All videos visible when no filters are selected
+- **Multiple Selection:** Users can select multiple options within each filter category
+
+### Responsive Design
+- **Mobile-first approach**
+- **Breakpoints:**
+  - Mobile: 1 column
+  - Tablet: 2 columns
+  - Desktop: 4 columns
+- **Filter adaptation:** Pills should wrap appropriately on smaller screens
+
+### Video Integration
+- **Placeholder Structure:** Ready for YouTube embed URLs to be inserted
+- **Embed Settings:** 
+  - No autoplay
+  - Show controls
+  - Responsive sizing within square containers
+
+## Data Structure
+
+### Video Data Model
+```javascript
+{
+  id: string,
+  youtubeUrl: string, // Placeholder for now
+  schoolBoard: string, // One of the 7 boards listed
+  grade: number, // 9, 10, 11, or 12
+  description: string, // Placeholder one-sentence description
+  title: string // Optional video title
+}
+```
+
+### Sample Data Requirements
+20 video objects with placeholder data distributed across:
+- All 7 school boards
+- All 4 grade levels (9-12)
+- Placeholder YouTube URLs
+- Placeholder descriptions
+
+## Technical Implementation Notes
+
+### Component Architecture
+- **FilterPills:** Reusable pill component for both filter types
+- **VideoCard:** Individual video container component
+- **VideoGrid:** Grid layout component with filtering logic
+- **Layout:** Responsive grid using CSS Grid or Flexbox
+
+### State Management
+- Filter state management for active school board and grade selections
+- Video visibility state based on filter criteria
+
+### Styling Framework
+- Utilize shadcn/ui components for consistent design system
+- Custom styling for video grid and responsive behavior
+
+## User Interface Specifications
+
+### Filter Pills
+- Visual indication of active/selected state
+- Hover states for better UX
+- Clear button or method to reset filters
+- Responsive wrapping on smaller screens
+
+### Video Cards
+- Consistent spacing and alignment
+- Loading states for video embeds
+- Error handling for failed video loads
+- Hover effects for better interactivity
+
+### Grid Layout
+- Equal spacing between video cards
+- Proper alignment across all screen sizes
+- Graceful handling of content overflow
+
+## Development Deliverables
+
+### File Structure
+```
+/components
+  /ui (shadcn components)
+  /filters
+    - FilterPills.tsx
+  /video
+    - VideoCard.tsx
+    - VideoGrid.tsx
+  - Header.tsx
+  - Footer.tsx
+/lib
+  - data.ts (mock video data)
+  - utils.ts
+/pages or /app
+  - index.tsx or page.tsx
+```
+
+### Core Components
+1. **Main Layout Component**
+   - Header with title and subtitle
+   - Filter section
+   - Video grid
+   - Footer with logos
+
+2. **Filter System**
+   - School board filter pills
+   - Grade filter pills
+   - Filter logic and state management
+
+3. **Video Display**
+   - YouTube embed integration
+   - Video card layout
+   - Metadata display (board, grade, description)
+
+4. **Responsive Implementation**
+   - Mobile, tablet, and desktop layouts
+   - Touch-friendly interactions
+
+### Data Integration
+- Mock data structure for development in `/lib/data.ts`
+- Easy integration points for real video URLs
+- TypeScript interfaces for type safety
+
+### Cursor-Specific Implementation Notes
+- Use Cursor's autocomplete for shadcn/ui component imports
+- Leverage Cursor's code generation for repetitive component structures
+- Utilize Cursor's refactoring capabilities for responsive design adjustments
+- Take advantage of Cursor's TypeScript integration for type-safe development
+
+## Success Criteria
+- All 20 videos display correctly in grid format
+- Filters work independently and in combination
+- Page is fully responsive across devices
+- Videos embed properly and play on click
+- Clean, professional presentation suitable for showcasing student work
+- Fast loading times and smooth interactions
+
+## Future Considerations
+- Easy content management for updating video URLs and descriptions
+- Potential for adding more filter categories
+- Analytics integration possibility
+- Social sharing features
+- Video thumbnail customization
+- Search functionality expansion
+
+## Accessibility Requirements
+- Keyboard navigation support
+- Screen reader compatibility
+- Proper ARIA labels for interactive elements
+- Color contrast compliance
+- Focus management for video interactions

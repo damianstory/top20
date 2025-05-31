@@ -1,0 +1,225 @@
+# Design PRD: DMZ x myBlueprint Microgrant Showcase Landing Page
+
+## Design Philosophy
+A fresh, modern, and clean interface that showcases student work with professional polish. The design emphasizes content discovery through intuitive filtering while maintaining visual hierarchy and accessibility.
+
+## Color Palette
+
+### Primary Colors
+- **Primary Blue:** `#0092ff`
+- **Secondary Purple:** `#5736FB`
+- **Background:** `#ffffff` (Pure White)
+- **Text Primary:** `#0f0f0f` (Near Black)
+
+### Neutral Colors
+- **Text Secondary:** `#525252` (Gray 600)
+- **Text Muted:** `#a3a3a3` (Gray 400)
+- **Border Light:** `#f4f4f5` (Gray 100)
+- **Border Medium:** `#e4e4e7` (Gray 200)
+
+### State Colors
+- **Hover Primary:** `#0082e6` (Darker blue)
+- **Hover Purple:** `#4c2fd9` (Darker purple)
+- **Focus Ring:** `#0092ff` with 20% opacity
+
+## Typography
+
+### Font Family
+- **Primary:** `'Helvetica Neue', Helvetica, Arial, sans-serif`
+- **Fallback:** System font stack for performance
+
+### Type Scale
+- **H1 (Page Title):** 48px (3rem) / 56px line-height, font-weight: 700
+- **H2 (Subtitle):** 20px (1.25rem) / 28px line-height, font-weight: 400
+- **Body Large:** 16px (1rem) / 24px line-height, font-weight: 400
+- **Body Small:** 14px (0.875rem) / 20px line-height, font-weight: 400
+- **Pill Text:** 14px (0.875rem) / 20px line-height, font-weight: 500
+- **Video Description:** 14px (0.875rem) / 20px line-height, font-weight: 400
+
+### Responsive Typography
+- **Mobile H1:** 36px (2.25rem) / 40px line-height
+- **Mobile H2:** 18px (1.125rem) / 24px line-height
+
+## Layout & Spacing
+
+### Container
+- **Max Width:** 1200px
+- **Horizontal Padding:** 24px (1.5rem) on desktop, 16px (1rem) on mobile
+- **Centered:** Yes, with auto margins
+
+### Vertical Spacing
+- **Section Gaps:** 64px (4rem) on desktop, 48px (3rem) on mobile
+- **Header to Filters:** 48px (3rem)
+- **Filters to Grid:** 32px (2rem)
+- **Grid to Footer:** 64px (4rem)
+
+### Grid Spacing
+- **Video Card Gap:** 24px (1.5rem) on desktop, 16px (1rem) on mobile
+- **Card Internal Padding:** 16px (1rem)
+
+## Component Design Specifications
+
+### Header Section
+- **Background:** Gradient from white to light gray (`linear-gradient(to bottom, #ffffff 0%, #fafafa 100%)`)
+- **Padding:** 80px top, 48px bottom on desktop; 60px top, 32px bottom on mobile
+- **Text Alignment:** Center
+- **H1 Color:** `#0f0f0f`
+- **Subtitle Color:** `#525252`
+
+### Filter Pills
+- **Default State:**
+  - Background: `#f4f4f5`
+  - Border: 1px solid `#e4e4e7`
+  - Text Color: `#525252`
+  - Border Radius: 24px (fully rounded)
+  - Padding: 8px 16px
+  - Font Weight: 500
+
+- **Active State:**
+  - Background: `#0092ff`
+  - Border: 1px solid `#0092ff`
+  - Text Color: `#ffffff`
+  - Box Shadow: `0 2px 4px rgba(0, 146, 255, 0.1)`
+
+- **Hover State:**
+  - Default: Background `#e4e4e7`, Border `#d4d4d8`
+  - Active: Background `#0082e6`, Border `#0082e6`
+  - Transition: 150ms ease-in-out
+
+- **Layout:**
+  - Filter groups stacked vertically with 16px gap
+  - Pills within groups: 8px horizontal gap, 8px vertical gap (flex wrap)
+  - Group labels: 14px, font-weight 600, color `#0f0f0f`, margin-bottom 12px
+
+### Video Cards
+- **Container:**
+  - Background: `#ffffff`
+  - Border: 1px solid `#e4e4e7`
+  - Border Radius: 12px
+  - Box Shadow: `0 1px 3px rgba(0, 0, 0, 0.05)`
+  - Padding: 16px
+  - Transition: 200ms ease-in-out
+
+- **Hover State:**
+  - Transform: `translateY(-2px)`
+  - Box Shadow: `0 8px 25px rgba(0, 0, 0, 0.1)`
+  - Border Color: `#d4d4d8`
+
+- **Video Embed:**
+  - Aspect Ratio: 1:1 (square)
+  - Border Radius: 8px
+  - Overflow: hidden
+  - Margin Bottom: 12px
+
+- **Metadata Pills:**
+  - School Board: Background `#5736FB`, Text `#ffffff`
+  - Grade: Background `#f4f4f5`, Text `#525252`, Border `1px solid #e4e4e7`
+  - Size: 12px font, 4px 8px padding, 12px border-radius
+  - Gap: 6px between pills
+
+- **Description:**
+  - Color: `#525252`
+  - Margin Top: 8px
+  - Line clamp: 2 lines max with ellipsis
+
+### Footer
+- **Background:** `#fafafa`
+- **Padding:** 48px vertical, 24px horizontal
+- **Border Top:** 1px solid `#e4e4e7`
+- **Logo Container:**
+  - Display: flex, justify-content: center, align-items: center
+  - Gap: 32px between logos
+  - Logo max height: 40px
+  - Filter: grayscale(0.3) on default, grayscale(0) on hover
+
+## Responsive Breakpoints
+
+### Mobile (0-768px)
+- Grid: 1 column
+- H1: 36px
+- Container padding: 16px
+- Section gaps: 48px
+
+### Tablet (768px-1024px)
+- Grid: 2 columns
+- H1: 42px
+- Container padding: 20px
+- Section gaps: 56px
+
+### Desktop (1024px+)
+- Grid: 4 columns
+- H1: 48px
+- Container padding: 24px
+- Section gaps: 64px
+
+## Animations & Transitions
+
+### Micro-interactions
+- **Filter Pills:** 150ms ease-in-out for all state changes
+- **Video Cards:** 200ms ease-in-out for hover effects
+- **Page Load:** Stagger fade-in animation for video cards (100ms delay between each)
+- **Filter Transitions:** 300ms ease-in-out for show/hide animations
+
+### Performance Considerations
+- Use CSS transforms for animations (not layout properties)
+- Prefer opacity and transform changes
+- Use `will-change` sparingly and remove after animations
+
+## Accessibility
+
+### Color Contrast
+- All text meets WCAG 2.1 AA standards (4.5:1 ratio minimum)
+- Primary blue on white: 4.51:1 ✓
+- Black text on white: 21:1 ✓
+- Gray text on white: 7.02:1 ✓
+
+### Interactive Elements
+- Minimum touch target: 44px x 44px
+- Focus indicators: 2px solid `#0092ff` with 2px offset
+- Keyboard navigation support for all interactive elements
+
+### Motion
+- Respect `prefers-reduced-motion` for all animations
+- Provide alternative static states when motion is reduced
+
+## Implementation with shadcn/ui
+
+### Recommended Components
+- **Button** (for filter pills)
+- **Card** (for video containers)
+- **Badge** (for metadata pills)
+- **Container** (for layout structure)
+
+### Custom CSS Variables
+```css
+:root {
+  --primary: #0092ff;
+  --secondary: #5736fb;
+  --background: #ffffff;
+  --foreground: #0f0f0f;
+  --muted: #f4f4f5;
+  --muted-foreground: #525252;
+  --border: #e4e4e7;
+  --radius: 0.75rem;
+}
+```
+
+## Development Notes for Cursor
+
+### Styling Approach
+- Use Tailwind CSS classes where possible
+- Create custom CSS variables for brand colors
+- Implement responsive design with Tailwind breakpoints
+- Use CSS Grid for video layout with fallback to Flexbox
+
+### Component Structure
+- Each component should be self-contained with its styling
+- Use composition over inheritance for component design
+- Implement proper TypeScript interfaces for props
+- Include proper ARIA labels and semantic HTML
+
+### Performance Optimization
+- Lazy load YouTube embeds when in viewport
+- Use next/image for any static images (logos)
+- Implement proper loading states for video content
+- Optimize font loading with next/font
