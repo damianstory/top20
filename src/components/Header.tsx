@@ -23,10 +23,11 @@ export default function Header() {
         </div>
 
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-          DMZ x myBlueprint Microgrant Winners
+          <p>2025 Micro Grant Recipients 🎉</p> 
+          <p>DMZ x myBlueprint</p>
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
-          Celebrating 20 innovative student projects that received $500 microgrants to bring their ideas to life
+          Celebrating 20 student projects that received $500 micro grants to bring their ideas to life
         </p>
       </div>
     </header>
