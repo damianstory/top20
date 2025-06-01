@@ -54,7 +54,7 @@ export default function Filters({
               </SelectTrigger>
               <SelectContent>
                 {grades.map((grade) => (
-                  <SelectItem key={grade} value={grade}>
+                  <SelectItem key={grade} value={grade.toString()}>
                     {grade}
                   </SelectItem>
                 ))}

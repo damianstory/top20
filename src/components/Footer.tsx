@@ -6,7 +6,7 @@ export default function Footer() {
           Want to help fund future student micro grants?
         </p>
         <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
-          Email myBlueprint's Director of Special Projects{" "}
+          Email myBlueprint&apos;s Director of Special Projects{" "}
           <a 
             href="mailto:damian.matheson@myblueprint.ca" 
             className="text-blue-600 hover:text-blue-800 underline"
