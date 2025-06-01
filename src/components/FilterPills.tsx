@@ -16,7 +16,7 @@ export default function FilterPills({
   onGradeToggle,
 }: FilterPillsProps) {
   return (
-    <div className="py-8 bg-transparent">
+    <div className="pt-0 pb-12 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row gap-8 items-center justify-center">
           
