@@ -106,7 +106,7 @@ export const mockVideos: Video[] = [
     loomEmbedHtml: `<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/569448800ec941659838233023b72d67?sid=248cc3c5-6fd0-49c8-94aa-dea37ccc83ed" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`,
     schoolBoard: "York Region DSB",
     grade: 9,
-    description: "Open-source, modular 32-bit handheld console for hackers and engineers with exposed connectors and robust development library.",
+    description: "Open-source, modular 32-bit handheld console for builders and engineers with exposed connectors and robust development library.",
     title: "Handheld Gaming Platform"
   },
   // Video 8: Peel | 10 - GOOGLE DRIVE VIDEO
@@ -187,8 +187,8 @@ export const mockVideos: Video[] = [
   {
     id: "15",
     videoType: "googledrive",
-    videoUrl: "https://drive.google.com/file/d/1JPEt7Vz2SKpqvAg55NtnwjkUas4DyAUS/preview",
-    googleDriveEmbedHtml: `<iframe src="https://drive.google.com/file/d/1JPEt7Vz2SKpqvAg55NtnwjkUas4DyAUS/preview" width="640" height="480" allow="autoplay"></iframe>`,
+    videoUrl: "https://drive.google.com/file/d/13Kj_8sTLsk2lnDY-M_dYQSygmZnzGuo9/preview",
+    googleDriveEmbedHtml: `<iframe src="https://drive.google.com/file/d/13Kj_8sTLsk2lnDY-M_dYQSygmZnzGuo9/preview" width="640" height="480" allow="autoplay"></iframe>`,
     schoolBoard: "Halton DSB",
     grade: 10,
     description: "App delivering daily therapeutic songs tailored to users with anxiety, addiction, Parkinson's, and epilepsy for healing.",
@@ -234,7 +234,7 @@ export const mockVideos: Video[] = [
     schoolBoard: "Peel DSB",
     grade: 11,
     description: "Cookie business leveraging social media marketing, influencer partnerships, and engaging content to build brand and drive online sales.",
-    title: "Cookie Social Media"
+    title: "Kiera's Cookies"
   },
   // Video 20: Toronto DSB | 9 - LOOM VIDEO
   {
