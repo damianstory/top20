@@ -162,12 +162,12 @@ export const mockVideos: Video[] = [
     description: "B-25 inspired RC aircraft with modular telescope and FPV cameras for aerial observation and search capabilities.",
     title: "Airborne Observatory System"
   },
-  // Video 13: Toronto DSB | 10 - LOOM VIDEO
+  // Video 13: Toronto DSB | 10 - GOOGLE DRIVE VIDEO
   {
     id: "13",
-    videoType: "loom",
-    videoUrl: "https://www.loom.com/embed/74a648ef14134c22996b533effcbbe11?sid=259ae4f9-d568-4ee8-9d9a-092454d64610",
-    loomEmbedHtml: `<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/74a648ef14134c22996b533effcbbe11?sid=259ae4f9-d568-4ee8-9d9a-092454d64610" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`,
+    videoType: "googledrive",
+    videoUrl: "https://drive.google.com/file/d/15WM81gCje0oujzmugEyGVpJLp_ZlcLD9/preview",
+    googleDriveEmbedHtml: `<iframe src="https://drive.google.com/file/d/15WM81gCje0oujzmugEyGVpJLp_ZlcLD9/preview" width="640" height="480" allow="autoplay"></iframe>`,
     schoolBoard: "Toronto DSB",
     grade: 10,
     description: "Building a replica Shack-Hartmann Wavefront Sensor to test and compare with algorithmic approaches in optical astronomy.",
